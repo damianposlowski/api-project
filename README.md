@@ -1,0 +1,1 @@
+This is a project to develop an API from scratch using Python, FastAPI and PostgreSQL.
