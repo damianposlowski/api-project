@@ -20,6 +20,11 @@ my_posts = [
     {"title": "fun title for my post", "content": "engaging content of this post", "id": 2}
     ]
 
+def find_post(id):
+    for post in my_posts:
+        if post["id"] == int(id):
+            return post
+
 
 @app.get("/")
 def root():
@@ -35,3 +40,9 @@ def create_posts(post: Post):
     post_dict["id"] = randrange(0, 1000000)
     my_posts.append(post_dict)
     return {"data": post_dict}
+
+@app.get("/posts/{id}")
+def get_post(id: int):
+    post = list(filter(lambda item: item["id"] == int(id), my_posts))[0]
+    return {"post detail": post}
+    # return find_post(id)
