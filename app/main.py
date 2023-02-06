@@ -1,5 +1,5 @@
 # to run live server type in the terminal:
-# $ uvicorn main:app --reload
+# $ uvicorn app.main:app --reload
 
 from fastapi import FastAPI, Response, status, HTTPException
 from fastapi.params import Body
